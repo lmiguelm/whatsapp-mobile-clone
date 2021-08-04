@@ -1,8 +1,11 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-import { Home } from '../screens/Home';
 import { useTheme } from 'styled-components';
+
+import { Status } from '../screens/Status';
+import { Call } from '../screens/Call';
+import { Chat } from '../screens/Chat';
 
 const { Navigator, Screen } = createMaterialTopTabNavigator();
 
@@ -32,9 +35,9 @@ export function Tabs() {
         },
       }}
     >
-      <Screen name="Chats" component={Home} />
-      <Screen name="Status" component={Home} />
-      <Screen name="Calls" component={Home} />
+      <Screen name="Chats" component={Chat} />
+      <Screen name="Status" component={Status} />
+      <Screen name="Calls" component={Call} />
     </Navigator>
   );
 }
