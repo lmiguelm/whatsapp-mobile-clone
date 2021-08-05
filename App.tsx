@@ -1,7 +1,9 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { Text } from 'react-native';
 
-import { Text, View } from 'react-native';
+import { Provider } from 'react-redux';
+import { store } from './src/store';
 
 import {
   useFonts,
@@ -33,10 +35,12 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={DarkTheme}>
-      <StatusBar style="light" />
-      <Routes />
-      <FooterButton />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={DarkTheme}>
+        <StatusBar style="light" />
+        <Routes />
+        <FooterButton />
+      </ThemeProvider>
+    </Provider>
   );
 }
