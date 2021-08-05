@@ -9,6 +9,7 @@ export const LightTheme: WhatsAppThemeType = {
     info: '#9DE1FE',
     textBase: '#000000',
     textMuted: '#626262',
+    danger: 'red',
   },
   fonts,
 };

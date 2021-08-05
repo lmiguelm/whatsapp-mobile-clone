@@ -8,7 +8,8 @@ export const DarkTheme: WhatsAppThemeType = {
     primary: '#00AF9C',
     textBase: '#E2E2E3',
     textMuted: '#B1B3B5',
-    info: '#085373',
+    info: '#34b7f1',
+    danger: 'red',
   },
   fonts,
 };

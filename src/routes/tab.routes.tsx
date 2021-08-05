@@ -4,8 +4,10 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { useTheme } from 'styled-components';
 
 import { Status } from '../screens/Status';
-import { Call } from '../screens/Call';
+import { CallList } from '../screens/CallList';
 import { ChatList } from '../screens/ChatList';
+
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 const { Navigator, Screen } = createMaterialTopTabNavigator();
 
@@ -20,6 +22,10 @@ export function Tabs() {
       screenOptions={{
         tabBarActiveTintColor: primary,
         tabBarInactiveTintColor: textMuted,
+        tabBarStyle: {
+          // paddingTop: getStatusBarHeight(),
+          justifyContent: 'center',
+        },
         tabBarIndicatorContainerStyle: {
           backgroundColor: backgroundSecondary,
           borderWidth: 0,
@@ -37,7 +43,7 @@ export function Tabs() {
     >
       <Screen name="Chats" component={ChatList} />
       <Screen name="Status" component={Status} />
-      <Screen name="Calls" component={Call} />
+      <Screen name="Calls" component={CallList} />
     </Navigator>
   );
 }

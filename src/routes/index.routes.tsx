@@ -18,6 +18,7 @@ export function Routes() {
     <NavigationContainer>
       <Navigator
         screenOptions={{
+          // headerShown: false,
           headerStyle: {
             backgroundColor: backgroundSecondary,
             elevation: 0,

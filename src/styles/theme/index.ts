@@ -6,6 +6,7 @@ export type WhatsAppThemeType = {
     textBase: string;
     textMuted: string;
     info: string;
+    danger: string;
   };
   fonts: {
     regular: string;

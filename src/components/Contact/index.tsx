@@ -11,13 +11,16 @@ import {
   Message,
   Name,
   MessageInfoContainer,
+  StatusCallIcon,
+  CallIcon,
+  StatusMesasgeIcon,
 } from './styles';
 
 type ContactTypeProps = {
-  isChatMessage: boolean;
+  type: 'message' | 'info' | 'call';
 };
 
-export function Contact({ isChatMessage = false }: ContactTypeProps) {
+export function Contact({ type }: ContactTypeProps) {
   return (
     <ContactContainer>
       <Avatar />
@@ -26,20 +29,34 @@ export function Contact({ isChatMessage = false }: ContactTypeProps) {
           <Name>Miguel</Name>
 
           <MessageInfoContainer>
-            {isChatMessage && <Icon name="done-all" />}
-            <Message>Olá, Mundo!</Message>
+            {type === 'message' && (
+              <>
+                <StatusMesasgeIcon status="seen" />
+                <Message numberOfLines={1}>Teste Teste Teste Teste Testeeeeeeee</Message>
+              </>
+            )}
+            {type === 'call' && (
+              <>
+                <StatusCallIcon status="accepted" />
+                <Message numberOfLines={1}>July 26, 17:41</Message>
+              </>
+            )}
+            {type === 'info' && <Message numberOfLines={1}>Olá, estou usando o whatsapp</Message>}
           </MessageInfoContainer>
         </TouchableWithoutFeedback>
       </ContentContaienr>
 
-      {isChatMessage && (
-        <InfoContainer>
-          <TouchableWithoutFeedback>
-            <Hour>20:58</Hour>
-            <Icon name="volume-off" />
-          </TouchableWithoutFeedback>
-        </InfoContainer>
-      )}
+      <InfoContainer>
+        <TouchableWithoutFeedback>
+          {type === 'message' && (
+            <>
+              <Hour>20:58</Hour>
+              <Icon name="volume-off" />
+            </>
+          )}
+          {type === 'call' && <CallIcon type="videocall" />}
+        </TouchableWithoutFeedback>
+      </InfoContainer>
     </ContactContainer>
   );
 }
