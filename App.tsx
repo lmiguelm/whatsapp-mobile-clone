@@ -37,7 +37,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <ThemeProvider theme={DarkTheme}>
-        <StatusBar style="light" />
+        <StatusBar style="light" backgroundColor="#111" />
         <Routes />
         <FooterButton />
       </ThemeProvider>

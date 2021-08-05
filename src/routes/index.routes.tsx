@@ -11,6 +11,7 @@ const { Screen, Navigator } = createStackNavigator();
 
 export function Routes() {
   const {
+    title,
     colors: { backgroundSecondary, textMuted },
   } = useTheme();
 
@@ -18,15 +19,14 @@ export function Routes() {
     <NavigationContainer>
       <Navigator
         screenOptions={{
-          // headerShown: false,
           headerStyle: {
-            backgroundColor: backgroundSecondary,
+            backgroundColor: title === 'dark' ? backgroundSecondary : '#075E54',
             elevation: 0,
           },
           headerBackgroundContainerStyle: {
             backgroundColor: backgroundSecondary,
           },
-          headerTintColor: textMuted,
+          headerTintColor: title === 'dark' ? textMuted : '#fff',
         }}
       >
         <Screen

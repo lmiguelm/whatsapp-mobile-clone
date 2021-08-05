@@ -1,4 +1,5 @@
 export type WhatsAppThemeType = {
+  title: 'light' | 'dark';
   colors: {
     backgroundPrimary: string;
     backgroundSecondary: string;

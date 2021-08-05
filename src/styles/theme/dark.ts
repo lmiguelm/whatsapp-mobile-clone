@@ -2,6 +2,7 @@ import { WhatsAppThemeType } from './index';
 import { Fonts as fonts } from './fonts';
 
 export const DarkTheme: WhatsAppThemeType = {
+  title: 'dark',
   colors: {
     backgroundPrimary: '#131C21',
     backgroundSecondary: '#2A2F32',

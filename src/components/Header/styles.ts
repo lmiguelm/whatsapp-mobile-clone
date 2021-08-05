@@ -12,7 +12,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: ${(props) => props.theme.colors.textMuted};
+  color: ${(props) => (props.theme.title === 'dark' ? props.theme.colors.textMuted : '#fff')};
   font-size: 24px;
   font-family: ${(props) => props.theme.fonts.medium};
 `;
@@ -22,7 +22,7 @@ export const ButtonsContainer = styled.View`
 `;
 
 export const Icon = styled(MaterialIcons)`
-  color: ${(props) => props.theme.colors.textMuted};
+  color: ${(props) => (props.theme.title === 'dark' ? props.theme.colors.textMuted : '#fff')};
   font-size: 24px;
 `;
 

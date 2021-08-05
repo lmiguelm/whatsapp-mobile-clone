@@ -41,5 +41,5 @@ export const SecondButton = styled.TouchableOpacity.attrs({
 
 export const Icon = styled(MaterialIcons)`
   font-size: 24px;
-  color: ${(props) => props.theme.colors.textBase};
+  color: #ffffff;
 `;
