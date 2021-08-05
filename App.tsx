@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 import {
   useFonts,
@@ -17,6 +17,7 @@ import { DarkTheme } from './src/styles/theme/dark';
 import { LightTheme } from './src/styles/theme/light';
 
 import { Routes } from './src/routes/index.routes';
+import { FooterButton } from './src/components/FooterButton';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -35,6 +36,7 @@ export default function App() {
     <ThemeProvider theme={DarkTheme}>
       <StatusBar style="light" />
       <Routes />
+      <FooterButton />
     </ThemeProvider>
   );
 }
