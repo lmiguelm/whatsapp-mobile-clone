@@ -1,5 +1,5 @@
 import React from 'react';
-import { BorderlessButton } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native';
 import Modal from 'react-native-modal';
 import { useTheme } from 'styled-components';
 
@@ -30,21 +30,21 @@ export function AvatarModal({ showModal, closeModal }: AvatarModalPropsType) {
         </ModalImageContainer>
 
         <ModalFooter>
-          <BorderlessButton onPress={() => {}}>
+          <TouchableOpacity onPress={() => {}}>
             <Icon name="chat" />
-          </BorderlessButton>
+          </TouchableOpacity>
 
-          <BorderlessButton onPress={() => {}}>
+          <TouchableOpacity onPress={() => {}}>
             <Icon name="call" />
-          </BorderlessButton>
+          </TouchableOpacity>
 
-          <BorderlessButton onPress={() => {}}>
+          <TouchableOpacity onPress={() => {}}>
             <Icon name="videocam" />
-          </BorderlessButton>
+          </TouchableOpacity>
 
-          <BorderlessButton onPress={() => {}}>
+          <TouchableOpacity onPress={() => {}}>
             <Icon name="info-outline" />
-          </BorderlessButton>
+          </TouchableOpacity>
         </ModalFooter>
       </ModalContent>
     </Modal>
