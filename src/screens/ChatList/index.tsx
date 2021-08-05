@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import { useTheme } from 'styled-components';
 import { Contact } from '../../components/Contact';
+
+import { Container } from './styles';
 
 export function ChatList() {
   const {
@@ -9,7 +11,7 @@ export function ChatList() {
   } = useTheme();
 
   return (
-    <View>
+    <Container>
       <FlatList
         data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
         keyExtractor={(item) => String(item)}
@@ -19,6 +21,6 @@ export function ChatList() {
           backgroundColor: backgroundPrimary,
         }}
       />
-    </View>
+    </Container>
   );
 }

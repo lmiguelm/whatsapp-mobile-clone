@@ -4,13 +4,17 @@ import { Avatar } from '../Avatar/indes';
 
 import { ContactContainer, ContentContaienr, Hour, Name, MessageInfoContainer } from './styles';
 
-export function Status() {
+type StatusPropsType = {
+  isMyStatus?: boolean;
+};
+
+export function Status({ isMyStatus = false }: StatusPropsType) {
   return (
     <ContactContainer>
       <Avatar />
       <ContentContaienr>
         <TouchableWithoutFeedback>
-          <Name>Miguel</Name>
+          <Name>{isMyStatus ? 'My status' : 'Miguel'}</Name>
 
           <MessageInfoContainer>
             <Hour numberOfLines={1}>Today, 14:20</Hour>

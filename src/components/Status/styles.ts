@@ -6,7 +6,7 @@ export const ContactContainer = styled.TouchableOpacity.attrs({
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 15px 10px;
 
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
 `;
