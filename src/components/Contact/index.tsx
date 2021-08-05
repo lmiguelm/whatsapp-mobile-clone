@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Avatar } from '../Avatar/indes';
 
 import {
@@ -25,7 +25,7 @@ export function Contact({ type }: ContactTypeProps) {
     <ContactContainer>
       <Avatar />
       <ContentContaienr>
-        <TouchableWithoutFeedback>
+        <TouchableOpacity>
           <Name>Miguel</Name>
 
           <MessageInfoContainer>
@@ -43,11 +43,11 @@ export function Contact({ type }: ContactTypeProps) {
             )}
             {type === 'info' && <Message numberOfLines={1}>Olá, estou usando o whatsapp</Message>}
           </MessageInfoContainer>
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
       </ContentContaienr>
 
       <InfoContainer>
-        <TouchableWithoutFeedback>
+        <TouchableOpacity>
           {type === 'message' && (
             <>
               <Hour>20:58</Hour>
@@ -55,7 +55,7 @@ export function Contact({ type }: ContactTypeProps) {
             </>
           )}
           {type === 'call' && <CallIcon type="videocall" />}
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
       </InfoContainer>
     </ContactContainer>
   );
