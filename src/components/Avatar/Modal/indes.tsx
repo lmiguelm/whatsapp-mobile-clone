@@ -1,6 +1,7 @@
 import React from 'react';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import Modal from 'react-native-modal';
+import { useTheme } from 'styled-components';
 
 import { ModalContent, ModalImage, ModalFooter, ModalImageContainer, Icon } from './styles';
 
@@ -10,6 +11,10 @@ type AvatarModalPropsType = {
 };
 
 export function AvatarModal({ showModal, closeModal }: AvatarModalPropsType) {
+  const {
+    colors: { backgroundSecondary },
+  } = useTheme();
+
   return (
     <Modal
       animationIn="zoomInLeft"
@@ -17,6 +22,7 @@ export function AvatarModal({ showModal, closeModal }: AvatarModalPropsType) {
       animationInTiming={500}
       isVisible={showModal}
       onBackdropPress={closeModal}
+      backdropColor={backgroundSecondary}
     >
       <ModalContent>
         <ModalImageContainer>
@@ -24,19 +30,19 @@ export function AvatarModal({ showModal, closeModal }: AvatarModalPropsType) {
         </ModalImageContainer>
 
         <ModalFooter>
-          <BorderlessButton onPress={() => console.log('ok')}>
+          <BorderlessButton onPress={() => {}}>
             <Icon name="chat" />
           </BorderlessButton>
 
-          <BorderlessButton>
+          <BorderlessButton onPress={() => {}}>
             <Icon name="call" />
           </BorderlessButton>
 
-          <BorderlessButton>
+          <BorderlessButton onPress={() => {}}>
             <Icon name="videocam" />
           </BorderlessButton>
 
-          <BorderlessButton>
+          <BorderlessButton onPress={() => {}}>
             <Icon name="info-outline" />
           </BorderlessButton>
         </ModalFooter>

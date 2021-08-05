@@ -3,7 +3,7 @@ import { Fonts as fonts } from './fonts';
 
 export const DarkTheme: WhatsAppThemeType = {
   colors: {
-    backgroundPrimary: '#2D3134',
+    backgroundPrimary: '#131C21',
     backgroundSecondary: '#2A2F32',
     primary: '#00AF9C',
     textBase: '#E2E2E3',

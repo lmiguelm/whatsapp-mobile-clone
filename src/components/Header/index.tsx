@@ -9,11 +9,11 @@ export function Header() {
       <Title>WhatsApp</Title>
 
       <ButtonsContainer>
-        <BorderlessButton>
+        <BorderlessButton onPress={() => {}}>
           <Icon name="search" style={{ marginRight: 10 }} />
         </BorderlessButton>
 
-        <BorderlessButton>
+        <BorderlessButton onPress={() => {}}>
           <Icon name="more-vert" />
         </BorderlessButton>
       </ButtonsContainer>

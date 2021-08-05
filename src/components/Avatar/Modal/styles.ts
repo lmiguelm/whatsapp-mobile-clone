@@ -8,8 +8,8 @@ export const ModalContent = styled.View`
   margin-top: -100px;
 
   height: 350px;
-  width: 350px;
-  background-color: red;
+  width: 100%;
+  margin: 30px;
 `;
 
 export const ModalImageContainer = styled.View`

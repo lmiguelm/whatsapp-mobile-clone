@@ -5,7 +5,7 @@ import { useTheme } from 'styled-components';
 
 import { Status } from '../screens/Status';
 import { Call } from '../screens/Call';
-import { Chat } from '../screens/Chat';
+import { ChatList } from '../screens/ChatList';
 
 const { Navigator, Screen } = createMaterialTopTabNavigator();
 
@@ -35,7 +35,7 @@ export function Tabs() {
         },
       }}
     >
-      <Screen name="Chats" component={Chat} />
+      <Screen name="Chats" component={ChatList} />
       <Screen name="Status" component={Status} />
       <Screen name="Calls" component={Call} />
     </Navigator>
