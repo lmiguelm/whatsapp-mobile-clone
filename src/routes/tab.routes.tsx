@@ -8,10 +8,14 @@ import { CallList } from '../screens/CallList';
 import { ChatList } from '../screens/ChatList';
 
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { useDispatch } from 'react-redux';
+import { changeCurrentScreen } from '../actions/screenAction';
 
 const { Navigator, Screen } = createMaterialTopTabNavigator();
 
 export function Tabs() {
+  const dispatch = useDispatch();
+
   const {
     colors: { backgroundSecondary, primary, textMuted },
     fonts: { bold },
@@ -41,9 +45,27 @@ export function Tabs() {
         },
       }}
     >
-      <Screen name="Chats" component={ChatList} />
-      <Screen name="Status" component={Status} />
-      <Screen name="Calls" component={CallList} />
+      <Screen
+        name="Chats"
+        component={ChatList}
+        listeners={({ route }) => ({
+          focus: () => dispatch(changeCurrentScreen(route.name)),
+        })}
+      />
+      <Screen
+        name="Status"
+        component={Status}
+        listeners={({ route }) => ({
+          focus: () => dispatch(changeCurrentScreen(route.name)),
+        })}
+      />
+      <Screen
+        name="Calls"
+        component={CallList}
+        listeners={({ route }) => ({
+          focus: () => dispatch(changeCurrentScreen(route.name)),
+        })}
+      />
     </Navigator>
   );
 }

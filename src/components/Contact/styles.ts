@@ -5,7 +5,7 @@ export const ContactContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
 
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
 `;
