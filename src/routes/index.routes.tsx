@@ -7,7 +7,7 @@ import { useTheme } from 'styled-components';
 import { TabsHeader } from '../components/TabsHeader';
 
 import { Tabs } from './tab.routes';
-import { MyContacts } from '../screens/MyContacts';
+import { Contacts } from '../screens/Contacts';
 import { navigationRef } from '../utils/RootNavigation';
 import { useDispatch } from 'react-redux';
 import { changeCurrentScreen } from '../actions/screenAction';
@@ -47,7 +47,7 @@ export function Routes() {
 
         <Screen
           name="Contacts"
-          component={MyContacts}
+          component={Contacts}
           options={{
             header: () => <ContactHeader />,
           }}
