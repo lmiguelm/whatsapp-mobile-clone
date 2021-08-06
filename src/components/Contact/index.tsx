@@ -46,17 +46,22 @@ export function Contact({ type }: ContactTypeProps) {
         </TouchableOpacity>
       </ContentContaienr>
 
-      <InfoContainer>
-        <TouchableOpacity>
-          {type === 'message' && (
-            <>
-              <Hour>20:58</Hour>
-              <Icon name="volume-off" />
-            </>
-          )}
-          {type === 'call' && <CallIcon type="videocall" />}
-        </TouchableOpacity>
-      </InfoContainer>
+      {type === 'message' && (
+        <InfoContainer>
+          <TouchableOpacity>
+            <Hour>20:58</Hour>
+            <Icon name="volume-off" />
+          </TouchableOpacity>
+        </InfoContainer>
+      )}
+
+      {type === 'call' && (
+        <InfoContainer>
+          <TouchableOpacity>
+            <CallIcon type="videocall" />
+          </TouchableOpacity>
+        </InfoContainer>
+      )}
     </ContactContainer>
   );
 }

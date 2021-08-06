@@ -44,28 +44,13 @@ export function Tabs() {
           textTransform: 'uppercase',
         },
       }}
+      screenListeners={({ route }) => ({
+        focus: () => dispatch(changeCurrentScreen(route.name as any)),
+      })}
     >
-      <Screen
-        name="Chats"
-        component={ChatList}
-        listeners={({ route }) => ({
-          focus: () => dispatch(changeCurrentScreen(route.name)),
-        })}
-      />
-      <Screen
-        name="Status"
-        component={Status}
-        listeners={({ route }) => ({
-          focus: () => dispatch(changeCurrentScreen(route.name)),
-        })}
-      />
-      <Screen
-        name="Calls"
-        component={CallList}
-        listeners={({ route }) => ({
-          focus: () => dispatch(changeCurrentScreen(route.name)),
-        })}
-      />
+      <Screen name="Chats" component={ChatList} />
+      <Screen name="Status" component={Status} />
+      <Screen name="Calls" component={CallList} />
     </Navigator>
   );
 }

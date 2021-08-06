@@ -1,7 +1,7 @@
 import { AnyAction } from 'redux';
 import { ScreenTypes } from './type';
 
-export type ScreenType = 'Chats' | 'Status' | 'Calls';
+export type ScreenType = 'Chats' | 'Status' | 'Calls' | null;
 
 export type ScreenReduderType = {
   currentScreen: ScreenType;

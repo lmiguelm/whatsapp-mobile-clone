@@ -11,7 +11,7 @@ import { MenuStatus } from './MenuStatus';
 
 import { Container, Title, ButtonsContainer, Icon, Menu } from './styles';
 
-export function Header() {
+export function TabsHeader() {
   const currentPage = useSelector((store: StoreType) => store.Screen.currentScreen);
 
   const menuRef = useRef<MenuMaterial>(null);
