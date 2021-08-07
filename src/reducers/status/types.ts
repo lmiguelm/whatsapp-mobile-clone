@@ -1,0 +1,4 @@
+export const StatusType = {
+  SHOW_MODAL_STATUS: 'SHOW_MODAL_STATUS',
+  HIDE_MODAL_STATUS: 'HIDE_MODAL_STATUS',
+};

@@ -36,3 +36,20 @@ export const Hour = styled.Text`
   font-family: ${(props) => props.theme.fonts.regular};
   font-size: 14px;
 `;
+
+export const StatusContainer = styled.View`
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  border-width: 2px;
+  border-color: ${(props) => props.theme.colors.primary};
+`;
+
+export const StatusImage = styled.Image`
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+`;

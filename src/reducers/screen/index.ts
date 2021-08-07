@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux';
-import { ScreenTypes } from './type';
+import { ScreenTypes } from './types';
 
 export type ScreenType = 'Chats' | 'Status' | 'Calls' | null;
 

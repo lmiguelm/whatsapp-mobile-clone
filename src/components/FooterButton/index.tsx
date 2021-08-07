@@ -9,12 +9,13 @@ import { FirstButton, SecondButton, Icon, Container } from './styles';
 
 export function FooterButton() {
   const currentScreen = useSelector((store: StoreType) => store.Screen.currentScreen);
+  const modalStatusIsOpen = useSelector((store: StoreType) => store.Status.showModalStatus);
 
   function navigateToContactsScreen() {
     RootNavigate('Contacts');
   }
 
-  if (!currentScreen) {
+  if (!currentScreen || modalStatusIsOpen) {
     return <></>;
   }
 

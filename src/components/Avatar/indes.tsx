@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useCallback } from 'react';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import { AvatarModal } from './Modal/indes';
+import { AvatarModal } from './Modal';
 
 import { AvatarImg } from './styles';
 

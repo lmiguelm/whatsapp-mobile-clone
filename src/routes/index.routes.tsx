@@ -1,22 +1,26 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { useTheme } from 'styled-components';
 
+import { Tabs } from './tab.routes';
+import { navigationRef } from '../utils/RootNavigation';
+
+import { changeCurrentScreen } from '../actions/screenAction';
+
+import { ContactHeader } from '../components/ContactHeader';
 import { TabsHeader } from '../components/TabsHeader';
 
-import { Tabs } from './tab.routes';
 import { Contacts } from '../screens/Contacts';
-import { navigationRef } from '../utils/RootNavigation';
-import { useDispatch } from 'react-redux';
-import { changeCurrentScreen } from '../actions/screenAction';
-import { ContactHeader } from '../components/ContactHeader';
+import { StoreType } from '../reducers';
 
 const { Screen, Navigator } = createStackNavigator();
 
 export function Routes() {
   const dispatch = useDispatch();
+  const showModalStatus = useSelector((store: StoreType) => store.Status.showModalStatus);
 
   const {
     title,
@@ -41,6 +45,7 @@ export function Routes() {
           name="WhatsApp"
           component={Tabs}
           options={{
+            headerShown: !showModalStatus,
             headerTitle: () => <TabsHeader />,
           }}
         />
