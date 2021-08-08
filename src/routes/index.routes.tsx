@@ -20,6 +20,7 @@ import { StoreType } from '../reducers';
 import { Chat } from '../screens/Chat';
 import { ScreenType } from '../reducers/screen';
 import { CallInfo } from '../screens/CallInfo';
+import { Camera } from '../screens/Camera';
 
 const { Screen, Navigator } = createStackNavigator();
 
@@ -84,6 +85,8 @@ export function Routes() {
             header: () => <CallInfoHeader />,
           }}
         />
+
+        <Screen name="Camera" component={Camera} options={{ headerShown: false }} />
       </Navigator>
     </NavigationContainer>
   );

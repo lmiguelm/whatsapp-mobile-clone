@@ -15,6 +15,10 @@ export function FooterButton() {
     RootNavigate('Contacts');
   }
 
+  function navigateToCameraScreen() {
+    RootNavigate('Camera');
+  }
+
   if (!currentScreen || modalStatusIsOpen) {
     return <></>;
   }
@@ -35,7 +39,7 @@ export function FooterButton() {
 
       {currentScreen === 'Status' && (
         <FirstButton>
-          <Icon name="camera-alt" onPress={() => Alert.alert('')} />
+          <Icon name="camera-alt" onPress={navigateToCameraScreen} />
         </FirstButton>
       )}
 
