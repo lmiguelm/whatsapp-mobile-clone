@@ -13,6 +13,7 @@ import { changeCurrentScreen } from '../actions/screenAction';
 import { ContactHeader } from '../components/Headers/ContactHeader';
 import { TabsHeader } from '../components/Headers/TabsHeader';
 import { ChatHeader } from '../components/Headers/ChatHeader';
+import { CallInfoHeader } from '../components/Headers/CallInfoHeader';
 
 import { Contacts } from '../screens/Contacts';
 import { StoreType } from '../reducers';
@@ -80,7 +81,7 @@ export function Routes() {
           name="CallInfo"
           component={CallInfo}
           options={{
-            header: () => <ChatHeader />,
+            header: () => <CallInfoHeader />,
           }}
         />
       </Navigator>
