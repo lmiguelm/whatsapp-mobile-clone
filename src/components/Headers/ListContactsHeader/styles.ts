@@ -7,7 +7,7 @@ export const InfoContainer = styled.TouchableOpacity.attrs({
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 10px;
+  padding: 15px;
 
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
 `;
