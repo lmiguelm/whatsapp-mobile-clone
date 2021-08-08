@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList } from 'react-native-gesture-handler';
 import { useTheme } from 'styled-components';
 import { Contact } from '../../components/Contact';
-import { ListContactHeader } from '../../components/ListContactsHeader/indes';
+import { ListContactHeader } from '../../components/Headers/ListContactsHeader';
 
 import { Container } from './styles';
 

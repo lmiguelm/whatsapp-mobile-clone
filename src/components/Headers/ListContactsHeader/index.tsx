@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import { Avatar } from '../Avatar/indes';
+import { Avatar } from '../../Avatar/indes';
 
 import { InfoContainer, ContentContaienr, Name, ImageContainer, Image } from './styles';
 

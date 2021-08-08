@@ -20,7 +20,7 @@ export function Tabs() {
 
   const {
     title,
-    colors: { backgroundSecondary, textMuted },
+    colors: { backgroundSecondary, textMuted, primary },
     fonts: { bold },
   } = useTheme();
 
@@ -36,7 +36,7 @@ export function Tabs() {
     return (
       <Navigator
         screenOptions={{
-          tabBarActiveTintColor: title === 'dark' ? textMuted : '#fff',
+          tabBarActiveTintColor: title === 'dark' ? primary : '#fff',
           tabBarInactiveTintColor: title === 'dark' ? textMuted : '#ddd',
           tabBarStyle: {
             justifyContent: 'center',
@@ -47,7 +47,7 @@ export function Tabs() {
             borderColor: backgroundSecondary,
           },
           tabBarIndicatorStyle: {
-            borderColor: title === 'dark' ? '#075E54' : '#fff',
+            borderColor: title === 'dark' ? primary : '#fff',
             borderWidth: 2,
           },
           tabBarLabelStyle: {

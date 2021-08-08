@@ -3,7 +3,7 @@ import { TouchableOpacity } from 'react-native';
 import MenuMaterial from 'react-native-material-menu';
 
 import { useSelector } from 'react-redux';
-import { StoreType } from '../../reducers';
+import { StoreType } from '../../../reducers';
 
 import { MenuCalls } from './MenuCalls';
 import { MenuChat } from './MenuChats';

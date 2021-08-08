@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 import { useTheme } from 'styled-components';
-import { HeaderStatus } from '../../components/HeaderStatus';
+import { HeaderStatus } from '../../components/Headers/HeaderStatus';
 
 import { Status as StatusComponent } from '../../components/Status';
 import { StatusModal } from '../../components/Status/Modal';

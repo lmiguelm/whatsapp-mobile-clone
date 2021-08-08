@@ -10,13 +10,15 @@ import { navigationRef } from '../utils/RootNavigation';
 
 import { changeCurrentScreen } from '../actions/screenAction';
 
-import { ContactHeader } from '../components/ContactHeader';
-import { TabsHeader } from '../components/TabsHeader';
-import { ChatHeader } from '../components/ChatHeader';
+import { ContactHeader } from '../components/Headers/ContactHeader';
+import { TabsHeader } from '../components/Headers/TabsHeader';
+import { ChatHeader } from '../components/Headers/ChatHeader';
 
 import { Contacts } from '../screens/Contacts';
 import { StoreType } from '../reducers';
 import { Chat } from '../screens/Chat';
+import { ScreenType } from '../reducers/screen';
+import { CallInfo } from '../screens/CallInfo';
 
 const { Screen, Navigator } = createStackNavigator();
 
@@ -42,6 +44,9 @@ export function Routes() {
           },
           headerTintColor: title === 'dark' ? textMuted : '#fff',
         }}
+        screenListeners={() => ({
+          focus: () => dispatch(changeCurrentScreen(null)),
+        })}
       >
         <Screen
           name="WhatsApp"
@@ -50,6 +55,9 @@ export function Routes() {
             headerShown: !showModalStatus,
             headerTitle: () => <TabsHeader />,
           }}
+          listeners={({ route }) => ({
+            focus: () => dispatch(changeCurrentScreen(route.name as ScreenType)),
+          })}
         />
 
         <Screen
@@ -58,9 +66,6 @@ export function Routes() {
           options={{
             header: () => <ContactHeader />,
           }}
-          listeners={() => ({
-            focus: () => dispatch(changeCurrentScreen(null)),
-          })}
         />
 
         <Screen
@@ -69,9 +74,14 @@ export function Routes() {
           options={{
             header: () => <ChatHeader />,
           }}
-          listeners={() => ({
-            focus: () => dispatch(changeCurrentScreen(null)),
-          })}
+        />
+
+        <Screen
+          name="CallInfo"
+          component={CallInfo}
+          options={{
+            header: () => <ChatHeader />,
+          }}
         />
       </Navigator>
     </NavigationContainer>
