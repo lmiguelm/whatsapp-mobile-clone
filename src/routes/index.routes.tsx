@@ -12,9 +12,11 @@ import { changeCurrentScreen } from '../actions/screenAction';
 
 import { ContactHeader } from '../components/ContactHeader';
 import { TabsHeader } from '../components/TabsHeader';
+import { ChatHeader } from '../components/ChatHeader';
 
 import { Contacts } from '../screens/Contacts';
 import { StoreType } from '../reducers';
+import { Chat } from '../screens/Chat';
 
 const { Screen, Navigator } = createStackNavigator();
 
@@ -55,6 +57,17 @@ export function Routes() {
           component={Contacts}
           options={{
             header: () => <ContactHeader />,
+          }}
+          listeners={() => ({
+            focus: () => dispatch(changeCurrentScreen(null)),
+          })}
+        />
+
+        <Screen
+          name="Chat"
+          component={Chat}
+          options={{
+            header: () => <ChatHeader />,
           }}
           listeners={() => ({
             focus: () => dispatch(changeCurrentScreen(null)),

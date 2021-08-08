@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { Avatar } from '../Avatar/indes';
 
 import {
@@ -16,16 +16,16 @@ import {
   StatusMesasgeIcon,
 } from './styles';
 
-type ContactTypeProps = {
+type ContactTypeProps = TouchableOpacityProps & {
   type: 'message' | 'info' | 'call';
 };
 
-export function Contact({ type }: ContactTypeProps) {
+export function Contact({ type, ...props }: ContactTypeProps) {
   return (
     <ContactContainer>
       <Avatar />
       <ContentContaienr>
-        <TouchableOpacity>
+        <TouchableOpacity {...props}>
           <Name>Miguel</Name>
 
           <MessageInfoContainer>
